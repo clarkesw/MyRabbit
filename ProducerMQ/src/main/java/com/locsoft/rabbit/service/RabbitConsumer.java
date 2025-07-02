@@ -9,13 +9,13 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Service;
 
 
-//@Service
+@Service
 public class RabbitConsumer {
         
 //    @Autowired
 //    Processor proc;
 //        
-//    @RabbitListener(queues = "TV")
+    @RabbitListener(queues = "TV")
     public void processOrder(byte[] data) throws IOException, ClassNotFoundException {
         ByteArrayInputStream bis = new ByteArrayInputStream(data);
         ObjectInput inO = new ObjectInputStream(bis);
