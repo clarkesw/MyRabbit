@@ -4,19 +4,14 @@ import com.rabbitmq.client.*;
 import com.rabbitmq.client.AMQP.BasicProperties; 
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeoutException;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
-@SpringBootApplication
 public class RabbitProducer {
 
-    public static void main(String[] args) throws IOException, TimeoutException, JSONException {
+    public static void main(String[] args) throws IOException, TimeoutException {
         
         ConnectionFactory cf = new ConnectionFactory();
         Connection conn = cf.newConnection();

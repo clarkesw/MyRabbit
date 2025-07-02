@@ -22,8 +22,8 @@ public class RabbitController {
     @Autowired
     private RabbitTemplate template;
     
-    @Autowired
-    RabbitConsumer rabbitService;
+//    @Autowired
+//    RabbitConsumer rabbitService;
     
     @Autowired
     Processor proc;
@@ -67,5 +67,5 @@ public class RabbitController {
     @GetMapping("/test")
     public String testMe(){   
         return proc.getData();
-    }
+    }    
 }
