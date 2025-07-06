@@ -22,7 +22,7 @@ public class RabbitConsumer {
         };
         
         ch.basicConsume("tv", false, call, tag -> {});
-  //      System.out.println("Latch: " + latch.getCount());
+        System.out.println("Latch: ");
         
     }
 }
