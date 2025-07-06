@@ -2,13 +2,11 @@ package com.locsoft.rabbit.controller;
 
 import com.locsoft.rabbit.beans.Person;
 import com.locsoft.rabbit.service.Processor;
-import com.locsoft.rabbit.service.RabbitConsumer;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageBuilder;
-import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,7 +29,7 @@ public class RabbitController {
 //    @Autowired
 //    private Queue queue;
         
-    @GetMapping("/test/{id}/{name}")
+    @GetMapping("/rabbit/{id}/{name}")
     public String testMe( @PathVariable("name")String name){
         
         String message = "Hello " + name + "! ";
@@ -42,7 +40,7 @@ public class RabbitController {
         return message;
     }
  
-    @GetMapping("/test2/{id}/{name}")
+    @GetMapping("/rabbit2/{id}/{name}")
     public Person testMe2(@PathVariable("id")int id, @PathVariable("name")String name) throws IOException{
         Person p = new Person(id, name);
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
